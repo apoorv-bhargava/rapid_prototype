@@ -2,20 +2,8 @@
 <html>
 <body>
 
-<script>
-(function () {
-    var div = document.createElement("div");
-    document.getElementsByTagName('body')[0].appendChild(div);
-    div.outerHTML = "<div id='botDiv' style='height: 38px; position: fixed; bottom: 0; z-index: 1000; background-color: #fff'><div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'></div><iframe width='300px' height='400px' src='https://console.dialogflow.com/api-client/demo/embedded/06054351-ca53-4821-970f-c9b8c1af8c53'></iframe></div>"; 
-
-    document.querySelector('body').addEventListener('click', function (e) {
-        e.target.matches = e.target.matches || e.target.msMatchesSelector;
-        if (e.target.matches('#botTitleBar')) { 
-            var botDiv = document.querySelector('#botDiv'); 
-            botDiv.style.height = botDiv.style.height == '000px' ? '0px' : '400px';
-        };
-    });
-}())
+<iframe alight="bottom" width='350px' height='430px' src='https://console.dialogflow.com/api-client/demo/embedded/06054351-ca53-4821-970f-c9b8c1af8c53'></iframe>
+    
 </script>
 
 </body>
