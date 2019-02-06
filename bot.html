@@ -3,23 +3,19 @@
 
 <body>
 
+(function () {
+    var div = document.createElement("div");
+    document.getElementsByTagName('body')[0].appendChild(div);
+    div.outerHTML = "<div id='botDiv' style='height: 38px; position: fixed; bottom: 0; z-index: 1000; background-color: #fff'><div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'></div><iframe width='350px' height='430px' src='https://console.dialogflow.com/api-client/demo/embedded/06054351-ca53-4821-970f-c9b8c1af8c53'></iframe></div>"; 
 
-
-
-
-<div class="links">
-    <a class="openpop" href="http://getbootstrap.com/">Link 1</a>
-    <a class="openpop" href="http://www.jsfiddle.net">Link 2</a>
-    <a class="openpop" href="http://www.w3schools.com">Link 3</a>
-</div>
-<div class="wrapper">
-    <div class="popup">
-        <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/06054351-ca53-4821-970f-c9b8c1af8c53">
-            <p>Your browser does not support iframes.</p>
-        </iframe>
-<a href="#" class="close">X</a>
-    </div>
-</div>
+    document.querySelector('body').addEventListener('click', function (e) {
+        e.target.matches = e.target.matches || e.target.msMatchesSelector;
+        if (e.target.matches('#botTitleBar')) { 
+            var botDiv = document.querySelector('#botDiv'); 
+            botDiv.style.height = botDiv.style.height == '600px' ? '38px' : '600px';
+        };
+    });
+}());
   
   </body>
 </html>
